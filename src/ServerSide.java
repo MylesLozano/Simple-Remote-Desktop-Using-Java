@@ -1,6 +1,6 @@
 import java.net.*;
 import java.io.*;
-public class ServerSide {
+public class ServerSide {//NACHANGE NI MYLES
     private Socket          socket   = null;
     private ServerSocket    server   = null;
     private DataInputStream in       =  null;
