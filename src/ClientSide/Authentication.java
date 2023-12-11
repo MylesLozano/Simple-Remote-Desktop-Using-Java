@@ -24,40 +24,37 @@ public class Authentication extends JFrame implements ActionListener {
         label1.setText("Password");
         text1=new JTextField(15);
         this.cSocket=cSocket;
-        label1=new JLabel();
-        label1.setText("");
+        label=new JLabel();
+        label.setText("");
         this.setLayout(new BorderLayout());
         submit=new JButton("Submit");
         panel=new JPanel(new GridLayout(2,1));
         panel.add(label1);
         panel.add(text1);
-        panel.add(label1);
+        panel.add(label);
         panel.add(submit);
         add(panel, BorderLayout.CENTER);
         submit.addActionListener(this);
         setTitle("Login form");
     }
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent ae) {
         String value1=text1.getText();
         try{
             passchk = new DataOutputStream(cSocket.getOutputStream());
             verification = new DataInputStream(cSocket.getInputStream());
             passchk.writeUTF(value1);
+            verify=verification.readUTF();
 
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        if(verify.equals("Valid"))
+        if(verify.equals("valid"))
         {
             try {
                 width = verification.readUTF();
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-            try {
-                height=verification.readUTF();
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
+                height = verification.readUTF();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
             CreateFrame abc=new CreateFrame(cSocket,width,height);
             dispose();

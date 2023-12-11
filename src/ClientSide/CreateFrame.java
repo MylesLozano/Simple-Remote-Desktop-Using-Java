@@ -21,7 +21,6 @@ public class CreateFrame extends Thread {
         this.width = width;
         this.height = height;
         this.cSocket = cSocket;
-        drawGUI(); // Call drawGUI to display the GUI
         start();   // Start the thread
     }
 
@@ -29,6 +28,7 @@ public class CreateFrame extends Thread {
     public void drawGUI() {
         frame.add(desktop, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
 

@@ -61,7 +61,7 @@ public class SendEvents implements KeyListener, MouseMotionListener, MouseListen
         int button = e.getButton();
         int xButton = 16;
         if (button == 3) {
-            xButton = 3;
+            xButton = 4;
         }
         writer.println(xButton);
         writer.flush();
