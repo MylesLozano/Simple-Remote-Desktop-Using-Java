@@ -43,7 +43,7 @@ public class InitConnection {
 
                 String psword=password.readUTF();
                 if (psword.equals(value1)) {
-                    verify.writeUTF("Valid");
+                    verify.writeUTF("valid");
                     verify.writeUTF(width);
                     verify.writeUTF(height);
                     new SendScreen(sc,robot,rectangle);

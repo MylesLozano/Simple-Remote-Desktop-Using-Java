@@ -25,27 +25,18 @@ public class ReceivingScreen extends Thread {
     public void run() {
         try {
             while (true) {
-                byte[] lengthBytes = new byte[4];
-                oin.read(lengthBytes, 0, 4);
+                byte[] lengthBytes = new byte[1024*1024];
+                int count=0;
+                do {
+                    count+=oin.read(lengthBytes,count,lengthBytes.length-count);
+                } while(!(count>4&&lengthBytes[count-2]==(byte)-1&&lengthBytes[count-1]==(byte)-39));
+                    image1 = ImageIO.read(new ByteArrayInputStream(lengthBytes));
+                    image1 = image1.getScaledInstance(cPanel.getWidth(), cPanel.getHeight(), Image.SCALE_FAST);
 
-                int length = ((lengthBytes[0] & 0xFF) << 24) |
-                        ((lengthBytes[1] & 0xFF) << 16) |
-                        ((lengthBytes[2] & 0xFF) << 8) |
-                        (lengthBytes[3] & 0xFF);
+                    Graphics graphics = cPanel.getGraphics();
+                    graphics.drawImage(image1, 0, 0, cPanel.getWidth(), cPanel.getHeight(), cPanel);
 
-                byte[] imageBytes = new byte[length];
-                int bytesRead = 0;
-
-                while (bytesRead < length) {
-                    bytesRead += oin.read(imageBytes, bytesRead, length - bytesRead);
                 }
-
-                image1 = ImageIO.read(new ByteArrayInputStream(imageBytes));
-                image1 = image1.getScaledInstance(cPanel.getWidth(), cPanel.getHeight(), Image.SCALE_FAST);
-
-                Graphics graphics = cPanel.getGraphics();
-                graphics.drawImage(image1, 0, 0, cPanel.getWidth(), cPanel.getHeight(), cPanel);
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,9 +1,6 @@
 package ClientSide;
 
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -77,7 +74,14 @@ public class SendEvents implements KeyListener, MouseMotionListener, MouseListen
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        // Handle mouseReleased event if needed
+        writer.println(Commands.RELEASE_MOUSE.getAbbrev());
+        int button = e.getButton();
+        int xButton = 16;
+        if (button == 3) {
+            xButton = 3;
+        }
+        writer.println(xButton);
+        writer.flush();
     }
 
     @Override
@@ -86,18 +90,18 @@ public class SendEvents implements KeyListener, MouseMotionListener, MouseListen
     }
 
     @Override
-    public void keyTyped(java.awt.event.KeyEvent e) {
+    public void keyTyped(KeyEvent e) {
         // Handle keyTyped event if needed
     }
 
     @Override
-    public void keyPressed(java.awt.event.KeyEvent e) {
+    public void keyPressed(KeyEvent e) {
         writer.println(Commands.PRESS_KEY.getAbbrev());
         writer.println(e.getKeyCode());
         writer.flush();
     }
     @Override
-    public void keyReleased(java.awt.event.KeyEvent e) {
+    public void keyReleased(KeyEvent e) {
         writer.println(Commands.RELEASE_KEY.getAbbrev());
         writer.println(e.getKeyCode());
         writer.flush();

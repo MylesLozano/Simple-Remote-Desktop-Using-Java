@@ -5,6 +5,7 @@ import java.beans.PropertyVetoException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
+import java.util.zip.*;
 
 import javax.swing.*;
 
