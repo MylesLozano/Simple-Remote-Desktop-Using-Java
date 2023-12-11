@@ -24,7 +24,7 @@ public class InitConnection {
         Robot robot=null;
         Rectangle rectangle=null;
         try{
-            System.out.println("Waiting for client to connect");
+            JOptionPane.showMessageDialog(null,"Waiting for client to connect");
             socket=new ServerSocket(port);
             GraphicsEnvironment gEnv=GraphicsEnvironment.getLocalGraphicsEnvironment();
             GraphicsDevice gDev=gEnv.getDefaultScreenDevice();

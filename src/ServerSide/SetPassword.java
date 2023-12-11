@@ -24,7 +24,7 @@ public class SetPassword extends JFrame implements ActionListener{
         panel.add(text1);
         panel.add(label);
         panel.add(btnSubmit);
-        add(panel,BorderLayout.CENTER);
+        add(panel,BorderLayout.LINE_START);
         btnSubmit.addActionListener(this);
         setTitle("Setting your password for ClientSide");
 
@@ -36,12 +36,5 @@ public class SetPassword extends JFrame implements ActionListener{
     }
     public String getValue1(){
         return value1;
-    }
-
-    public static void main(String[] args) {
-        SetPassword frame1=new SetPassword();
-        frame1.setSize(300,80);
-        frame1.setLocation(500,300);
-        frame1.setVisible(true);
     }
 }
