@@ -1,6 +1,6 @@
 package ServerSide;
 
-public class Start {
+public class Start {//IT FINALLY WORKS!!!
     public static void main(String[] args)
     {
         SetPassword frame1=new SetPassword();
