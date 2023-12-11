@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 public class SetPassword extends JFrame implements ActionListener{
-    static String port="4907";
+    static String port="6969";
     JButton btnSubmit;
     JPanel panel;
     JTextField text1,text2;

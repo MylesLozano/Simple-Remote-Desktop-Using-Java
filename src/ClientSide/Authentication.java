@@ -27,7 +27,7 @@ public class Authentication extends JFrame implements ActionListener {
         label1=new JLabel();
         label1.setText("");
         this.setLayout(new BorderLayout());
-        submit=new JButton("submit");
+        submit=new JButton("Submit");
         panel=new JPanel(new GridLayout(2,1));
         panel.add(label1);
         panel.add(text1);
@@ -47,7 +47,7 @@ public class Authentication extends JFrame implements ActionListener {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        if(verify.equals("valid"))
+        if(verify.equals("Valid"))
         {
             try {
                 width = verification.readUTF();
@@ -62,8 +62,8 @@ public class Authentication extends JFrame implements ActionListener {
             CreateFrame abc=new CreateFrame(cSocket,width,height);
             dispose();
         } else {
-            System.out.println("please enter valid password");
-            JOptionPane.showMessageDialog(this,"password is incorrect","Error",JOptionPane.ERROR_MESSAGE);
+            System.out.println("Please enter valid Password");
+            JOptionPane.showMessageDialog(this,"Password is Incorrect","Error",JOptionPane.ERROR_MESSAGE);
             dispose();
         }
     }

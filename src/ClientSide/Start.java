@@ -5,9 +5,9 @@ import java.net.Socket;
 
 
 public class Start {
-    static String port = "4907";
+    static String port = "6969";
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String ip = JOptionPane.showInputDialog("Please enter Server IP: ");
         new Start().initialize(ip, Integer.parseInt(port));
     }
