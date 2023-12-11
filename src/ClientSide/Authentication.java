@@ -56,11 +56,12 @@ public class Authentication extends JFrame implements ActionListener {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            CreateFrame abc=new CreateFrame(cSocket,width,height);
+            new CreateFrame(cSocket,width,height);
             dispose();
         } else {
-            System.out.println("Please enter valid Password");
+            JOptionPane.showMessageDialog(null,"Please enter valid Password");
             JOptionPane.showMessageDialog(this,"Password is Incorrect","Error",JOptionPane.ERROR_MESSAGE);
+            setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             dispose();
         }
     }

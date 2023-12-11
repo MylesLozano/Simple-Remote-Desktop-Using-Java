@@ -34,7 +34,7 @@ public class CreateFrame extends Thread {
 
         interFrame.setLayout(new BorderLayout());
         interFrame.getContentPane().add(cPanel, BorderLayout.CENTER);
-        interFrame.setSize(100, 100);
+        interFrame.setSize(200, 200);
         desktop.add(interFrame);
 
         try {
