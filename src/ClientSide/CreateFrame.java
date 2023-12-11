@@ -1,4 +1,4 @@
-package ClientSide.src;
+package ClientSide;
 
 import java.awt.BorderLayout;
 import java.beans.PropertyVetoException;

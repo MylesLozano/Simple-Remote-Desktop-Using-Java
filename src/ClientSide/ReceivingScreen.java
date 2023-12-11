@@ -1,4 +1,4 @@
-package ClientSide.src;
+package ClientSide;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package ClientSide.src;
+package ClientSide;
 
 public enum Commands {
     PRESS_MOUSE(-1),

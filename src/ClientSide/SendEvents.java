@@ -1,4 +1,4 @@
-package ClientSide.src;
+package ClientSide;
 
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;

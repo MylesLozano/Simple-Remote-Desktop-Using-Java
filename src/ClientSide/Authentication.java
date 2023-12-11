@@ -1,4 +1,4 @@
-package ClientSide.src;
+package ClientSide;
 
 import javax.swing.*;
 import java.awt.*;
