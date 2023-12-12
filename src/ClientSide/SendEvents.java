@@ -38,11 +38,6 @@ public class SendEvents implements KeyListener, MouseMotionListener, MouseListen
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        double xScale = w / cPanel.getWidth();
-        double yScale = h / cPanel.getHeight();
-        writer.println(Commands.DRAG_MOUSE.getAbbrev());
-        writer.println((int) (e.getX() * xScale));
-        writer.println((int) (e.getY() * yScale));
     }
 
     @Override
